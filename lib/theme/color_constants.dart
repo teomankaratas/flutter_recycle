@@ -9,6 +9,7 @@ class ColorConstants {
   static const Color whiteSmoke= Color(0XFFEEEEEE);
   static const Color jaguar = Color(0XFF29272A);
   static const Color ultramarineBlue = Color(0XFF376AED);
+  static const Color metallicBlue = Color(0XFF2D4379);
 
   
 }
