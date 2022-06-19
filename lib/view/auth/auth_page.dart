@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_recycle/view/auth/controllers/auth_controller.dart';
-import 'package:flutter_recycle/view/auth/login/login_page.dart';
-import 'package:flutter_recycle/view/auth/signup/signup_page.dart';
+import 'controllers/auth_controller.dart';
+import 'login/login_page.dart';
+import 'signup/signup_page.dart';
 import 'package:get/get.dart';
 
 import '../../app/theme/color_constants.dart';

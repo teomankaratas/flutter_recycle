@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import '../../../core/service/controller/firebase_auth_controller.dart';
 
-import 'package:flutter_recycle/view/auth/controllers/auth_controller.dart';
+import '../controllers/auth_controller.dart';
 import 'package:get/get.dart';
 
 import '../../../app/theme/color_constants.dart';
 import '../widgets/email_textfield.dart';
 import '../widgets/password_textfield.dart';
 
-
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
   final AuthTextEditingController _authTextEditingController =
       Get.put(AuthTextEditingController());
+      
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,19 @@ class LoginPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: ColorConstants.ultramarineBlue,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  FirebaseAuthController.authInstance
+                      .loginWithEmailAndPassword(
+                    _authTextEditingController
+                        .emailFieldController
+                        .text
+                        .trim(),
+                    _authTextEditingController
+                        .passwordFieldController
+                        .text
+                        .trim(),
+                  );
+                },
                 child: Text(
                   "LOGIN",
                   style: Theme.of(context)
@@ -56,14 +69,14 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-           Center(
-             child: Text(
+          Center(
+            child: Text(
               "Forgot your password? Reset here",
               style: Theme.of(context).textTheme.headline6,
+            ),
           ),
-           ),
-           Center(
-            child:  Text(
+          Center(
+            child: Text(
               "OR SIGN IN WITH",
               style: Theme.of(context).textTheme.headline6,
             ),

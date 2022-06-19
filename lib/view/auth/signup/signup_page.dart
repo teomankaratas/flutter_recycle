@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recycle/core/service/controller/firebase_auth_controller.dart';
+import '../../../core/service/controller/firebase_auth_controller.dart';
 
-import 'package:flutter_recycle/view/auth/controllers/auth_controller.dart';
+import '../controllers/auth_controller.dart';
 import 'package:get/get.dart';
 
 import '../../../app/theme/color_constants.dart';
@@ -10,8 +10,7 @@ import '../widgets/password_textfield.dart';
 
 class SignUpPage extends StatelessWidget {
   SignUpPage({Key? key}) : super(key: key);
-  final FirebaseAuthController _firebaseAuthController =
-      Get.put(FirebaseAuthController());
+  
 
   final AuthTextEditingController _authTextEditingController =
       Get.put(AuthTextEditingController());
@@ -48,7 +47,7 @@ class SignUpPage extends StatelessWidget {
                   primary: ColorConstants.ultramarineBlue,
                 ),
                 onPressed: () {
-                  _firebaseAuthController.registerWithEmailAndPassword(
+                  FirebaseAuthController.authInstance.registerWithEmailAndPassword(
                       _authTextEditingController.emailFieldController.text
                           .trim(),
                       _authTextEditingController.passwordFieldController.text
