@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recycle/theme/theme_storage.dart';
+
+import '../../app/theme/theme_storage.dart';
 
 
 class HomePage extends StatelessWidget {

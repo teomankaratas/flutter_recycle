@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recycle/theme/color_constants.dart';
+
+import 'color_constants.dart';
+
 
 class AppTheme {
   static final lightTheme = ThemeData.light().copyWith(
@@ -7,9 +9,11 @@ class AppTheme {
     scaffoldBackgroundColor: ColorConstants.whiteSmoke,
     buttonTheme:const ButtonThemeData(buttonColor: ColorConstants.jaguar),
     primaryColor: ColorConstants.eden,
-    textTheme: const TextTheme(headline6: TextStyle(color: Colors.white)),
+    textTheme: const TextTheme(headline6: TextStyle(color: ColorConstants.metallicBlue),subtitle1: TextStyle(color: ColorConstants.metallicBlue)),
+  
     
   );
+  
 
   static final darkTheme = ThemeData.dark().copyWith(
     buttonTheme:const ButtonThemeData(buttonColor: ColorConstants.jaguar),

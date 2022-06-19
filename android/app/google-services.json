@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "580688557916",
+    "project_id": "flutter-recycle",
+    "storage_bucket": "flutter-recycle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580688557916:android:1dd983f1c83c8bfb2a3399",
+        "android_client_info": {
+          "package_name": "com.example.flutter_recycle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580688557916-2015aj7sd1ur2b64dos0cimh5h6g8grp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5pktP_JoCy1GfHG13KhlE9VCGdcCm-iM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580688557916-2015aj7sd1ur2b64dos0cimh5h6g8grp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

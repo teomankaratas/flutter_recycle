@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_recycle/core/service/controller/firebase_auth_controller.dart';
 
 import 'package:flutter_recycle/view/auth/controllers/auth_controller.dart';
 import 'package:get/get.dart';
@@ -7,9 +8,10 @@ import '../../../app/theme/color_constants.dart';
 import '../widgets/email_textfield.dart';
 import '../widgets/password_textfield.dart';
 
-
-class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  SignUpPage({Key? key}) : super(key: key);
+  final FirebaseAuthController _firebaseAuthController =
+      Get.put(FirebaseAuthController());
 
   final AuthTextEditingController _authTextEditingController =
       Get.put(AuthTextEditingController());
@@ -30,7 +32,7 @@ class LoginPage extends StatelessWidget {
                 .copyWith(color: ColorConstants.jaguar),
           ),
           Text(
-            "Sign in with your account",
+            "Sign up",
             style: Theme.of(context).textTheme.headline5!.copyWith(
                   color: ColorConstants.jaguar,
                 ),
@@ -45,9 +47,15 @@ class LoginPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: ColorConstants.ultramarineBlue,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  _firebaseAuthController.registerWithEmailAndPassword(
+                      _authTextEditingController.emailFieldController.text
+                          .trim(),
+                      _authTextEditingController.passwordFieldController.text
+                          .trim());
+                },
                 child: Text(
-                  "LOGIN",
+                  "SIGN-UP",
                   style: Theme.of(context)
                       .textTheme
                       .headline5!
@@ -56,15 +64,15 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-           Center(
-             child: Text(
+          Center(
+            child: Text(
               "Forgot your password? Reset here",
               style: Theme.of(context).textTheme.headline6,
+            ),
           ),
-           ),
-           Center(
-            child:  Text(
-              "OR SIGN IN WITH",
+          Center(
+            child: Text(
+              "OR CREATE AN ACCOUNT WITH",
               style: Theme.of(context).textTheme.headline6,
             ),
           ),

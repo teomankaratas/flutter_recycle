@@ -9,7 +9,7 @@ class MyTabController extends GetxController
       text: "LOGIN",
     ),
     const Tab(
-      text: "SIGN UP",
+      text: "SIGNUP",
     ),
   ];
   @override
@@ -27,8 +27,9 @@ class MyTabController extends GetxController
 
 class AuthTextEditingController extends GetxController {
   late TextEditingController emailFieldController;
-   late TextEditingController passwordFieldController ;
+  late TextEditingController passwordFieldController;
   RxString emailTextfieldString = ''.obs;
+  RxBool isPasswordVisible = true.obs;
 
   @override
   void onInit() {
@@ -36,7 +37,11 @@ class AuthTextEditingController extends GetxController {
     passwordFieldController = TextEditingController();
     super.onInit();
 
-    emailFieldController.addListener(() {emailTextfieldString.value=emailFieldController.text;});
+    emailFieldController.addListener(
+      () {
+        emailTextfieldString.value = emailFieldController.text;
+      },
+    );
   }
 
   @override
